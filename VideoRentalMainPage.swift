@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  VideoRentalMainPage.swift
 //  VideoRentals
 //
 //  Created by Ufuoma Okoro on 17/08/2019.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class VideoRentalMainPage: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
+    
+
 
 
 }
-
