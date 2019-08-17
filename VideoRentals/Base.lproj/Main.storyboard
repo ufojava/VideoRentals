@@ -17,13 +17,124 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sfp-kS-gNp">
+                                <rect key="frame" x="0.0" y="88" width="165" height="774"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiH-Wq-LPX">
+                                        <rect key="frame" x="30" y="43" width="83" height="64"/>
+                                        <state key="normal" title="Button" image="videoCollectionAddIcon"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V12-xo-yVN">
+                                        <rect key="frame" x="29" y="219" width="83" height="64"/>
+                                        <state key="normal" title="Button" image="movieProjectorIcon"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOm-Uc-kNH">
+                                        <rect key="frame" x="30" y="115" width="83" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rent Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kug-0R-r7K">
+                                        <rect key="frame" x="29" y="301" width="84" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnY-S0-CT4">
+                                        <rect key="frame" x="31" y="395" width="83" height="64"/>
+                                        <state key="normal" title="Button" image="videoCollection"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rpt Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWk-z0-4hh">
+                                        <rect key="frame" x="31" y="477" width="83" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvS-te-HmZ">
+                                        <rect key="frame" x="31" y="575" width="83" height="64"/>
+                                        <state key="normal" title="Button" image="databaseUpdateIcon"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Db Update" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaR-93-ncp">
+                                        <rect key="frame" x="31" y="657" width="83" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="kug-0R-r7K" firstAttribute="leading" secondItem="Sfp-kS-gNp" secondAttribute="leading" constant="29" id="0BP-Df-pug"/>
+                                    <constraint firstItem="eaR-93-ncp" firstAttribute="leading" secondItem="Sfp-kS-gNp" secondAttribute="leading" constant="31" id="0eL-pv-eK4"/>
+                                    <constraint firstItem="NWk-z0-4hh" firstAttribute="top" secondItem="XnY-S0-CT4" secondAttribute="bottom" constant="18" id="1wV-t4-F3I"/>
+                                    <constraint firstAttribute="bottom" secondItem="eaR-93-ncp" secondAttribute="bottom" constant="96" id="4mh-Lk-jlO"/>
+                                    <constraint firstItem="kug-0R-r7K" firstAttribute="top" secondItem="V12-xo-yVN" secondAttribute="bottom" constant="18" id="7Wb-1x-aiF"/>
+                                    <constraint firstAttribute="trailing" secondItem="OiH-Wq-LPX" secondAttribute="trailing" constant="52" id="7t9-VJ-fVb"/>
+                                    <constraint firstAttribute="trailing" secondItem="cOm-Uc-kNH" secondAttribute="trailing" constant="52" id="8FZ-OJ-7uI"/>
+                                    <constraint firstItem="V12-xo-yVN" firstAttribute="leading" secondItem="Sfp-kS-gNp" secondAttribute="leading" constant="29" id="8wY-AU-6eO"/>
+                                    <constraint firstItem="V12-xo-yVN" firstAttribute="top" secondItem="cOm-Uc-kNH" secondAttribute="bottom" constant="83" id="9Aa-fz-emk"/>
+                                    <constraint firstItem="OiH-Wq-LPX" firstAttribute="leading" secondItem="Sfp-kS-gNp" secondAttribute="leading" constant="30" id="A4U-qx-J9v"/>
+                                    <constraint firstItem="OiH-Wq-LPX" firstAttribute="top" secondItem="Sfp-kS-gNp" secondAttribute="top" constant="43" id="H4Q-MW-BQp"/>
+                                    <constraint firstItem="XnY-S0-CT4" firstAttribute="leading" secondItem="Sfp-kS-gNp" secondAttribute="leading" constant="31" id="Hgy-iw-3lj"/>
+                                    <constraint firstItem="DvS-te-HmZ" firstAttribute="leading" secondItem="Sfp-kS-gNp" secondAttribute="leading" constant="31" id="Kt0-Mk-V4s"/>
+                                    <constraint firstItem="cOm-Uc-kNH" firstAttribute="leading" secondItem="Sfp-kS-gNp" secondAttribute="leading" constant="30" id="U7F-TI-yvx"/>
+                                    <constraint firstAttribute="trailing" secondItem="eaR-93-ncp" secondAttribute="trailing" constant="51" id="WEw-Ye-Z3P"/>
+                                    <constraint firstItem="DvS-te-HmZ" firstAttribute="top" secondItem="NWk-z0-4hh" secondAttribute="bottom" constant="77" id="XIe-Cp-5co"/>
+                                    <constraint firstAttribute="trailing" secondItem="V12-xo-yVN" secondAttribute="trailing" constant="53" id="XOc-mK-BcS"/>
+                                    <constraint firstAttribute="trailing" secondItem="XnY-S0-CT4" secondAttribute="trailing" constant="51" id="Xbp-uZ-FBI"/>
+                                    <constraint firstItem="NWk-z0-4hh" firstAttribute="leading" secondItem="Sfp-kS-gNp" secondAttribute="leading" constant="31" id="bAO-0R-MkK"/>
+                                    <constraint firstAttribute="trailing" secondItem="kug-0R-r7K" secondAttribute="trailing" constant="52" id="dnp-u9-eug"/>
+                                    <constraint firstItem="XnY-S0-CT4" firstAttribute="top" secondItem="kug-0R-r7K" secondAttribute="bottom" constant="73" id="dog-fs-Bcr"/>
+                                    <constraint firstItem="eaR-93-ncp" firstAttribute="top" secondItem="DvS-te-HmZ" secondAttribute="bottom" constant="18" id="mn1-GI-5ts"/>
+                                    <constraint firstAttribute="trailing" secondItem="NWk-z0-4hh" secondAttribute="trailing" constant="51" id="ncG-Fa-XQq"/>
+                                    <constraint firstAttribute="width" constant="165" id="vIe-qv-v72"/>
+                                    <constraint firstAttribute="trailing" secondItem="DvS-te-HmZ" secondAttribute="trailing" constant="51" id="zUb-eL-ddD"/>
+                                    <constraint firstItem="cOm-Uc-kNH" firstAttribute="top" secondItem="OiH-Wq-LPX" secondAttribute="bottom" constant="8" id="zpt-xS-JcL"/>
+                                </constraints>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebE-4O-OLz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Ufo Video Rental" id="iTf-S5-CKT">
+                                        <barButtonItem key="rightBarButtonItem" title="Menu" id="5ae-mv-la8">
+                                            <connections>
+                                                <action selector="menuActionButton:" destination="BYZ-38-t0r" id="8l4-Gt-zBU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Sfp-kS-gNp" firstAttribute="top" secondItem="ebE-4O-OLz" secondAttribute="bottom" id="8ge-Hr-OAT"/>
+                            <constraint firstItem="Sfp-kS-gNp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Bm2-12-Fwh"/>
+                            <constraint firstItem="Sfp-kS-gNp" firstAttribute="top" secondItem="ebE-4O-OLz" secondAttribute="bottom" id="kGO-5J-Vj9"/>
+                            <constraint firstItem="Sfp-kS-gNp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mO5-85-vrW"/>
+                            <constraint firstItem="ebE-4O-OLz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qwG-dc-vom"/>
+                            <constraint firstItem="ebE-4O-OLz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rUF-0b-WAi"/>
+                            <constraint firstItem="ebE-4O-OLz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xnd-jJ-gbH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addVideoOutletLabel" destination="cOm-Uc-kNH" id="aw4-Wn-yYS"/>
+                        <outlet property="databaseUpdateOutletLabel" destination="eaR-93-ncp" id="UXP-rg-xS7"/>
+                        <outlet property="rentVideoOutletLabel" destination="kug-0R-r7K" id="OK3-Wg-lvh"/>
+                        <outlet property="reportMenuOutletLabel" destination="NWk-z0-4hh" id="QHP-gc-jgy"/>
+                        <outlet property="slideBarLeadingOutletConstraint" destination="mO5-85-vrW" id="Ooh-nQ-7eM"/>
+                        <outlet property="slidebarOutletView" destination="Sfp-kS-gNp" id="uJw-Zh-lGq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-170" y="129"/>
+            <point key="canvasLocation" x="-584.05797101449275" y="118.52678571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="databaseUpdateIcon" width="64" height="64"/>
+        <image name="movieProjectorIcon" width="64" height="64"/>
+        <image name="videoCollection" width="64" height="64"/>
+        <image name="videoCollectionAddIcon" width="64" height="64"/>
+    </resources>
 </document>
