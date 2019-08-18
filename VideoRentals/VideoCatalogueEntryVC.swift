@@ -38,6 +38,7 @@ class VideoCatalogueEntryVC: UIViewController {
         // Custom function
         formatVC() //Format Textfield and Buttons
         conPickerView() //Connect Pickerview
+        createCatalogueNo()
     }
     
     
@@ -67,6 +68,9 @@ class VideoCatalogueEntryVC: UIViewController {
         navigationBarOutletNav.layer.shadowOffset = CGSize(width: 3, height: 3)
         
         //Format fields
+        cataloguOutletText.textColor = UIColor.red
+        cataloguOutletText.isEnabled = false //To disable editing to text
+        cataloguOutletText.isUserInteractionEnabled = false //Also to disable editing
         cataloguOutletText.textColor = UIColor.blue
         cataloguOutletText.autocapitalizationType = .allCharacters
         cataloguOutletText.layer.shadowOpacity = 1
@@ -108,11 +112,13 @@ class VideoCatalogueEntryVC: UIViewController {
         
         //Format the Add Button
         
-        addFilmOutletButton.setTitleColor(.black, for: .normal)
-        addFilmOutletButton.backgroundColor = #colorLiteral(red: 1, green: 0.8323456645, blue: 0.4732058644, alpha: 1)
+        addFilmOutletButton.setTitleColor(.white, for: .normal)
+        addFilmOutletButton.backgroundColor = #colorLiteral(red: 0.506442913, green: 0.3871898624, blue: 0.574860394, alpha: 0.94)
+        addFilmOutletButton.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         addFilmOutletButton.layer.shadowOpacity = 1
         addFilmOutletButton.layer.shadowRadius = 5
         addFilmOutletButton.layer.shadowOffset = CGSize(width: 3, height: 3)
+        addFilmOutletButton.layer.cornerRadius = 10
         
         
         
@@ -127,6 +133,34 @@ class VideoCatalogueEntryVC: UIViewController {
         //Connect DataSource and Delegate
         genrePickOutletPickerView.delegate = self
         genrePickOutletPickerView.dataSource = self
+    }
+    
+    
+    //Function to autocreate cataloge number
+    func createCatalogueNo() {
+        
+        //Variable to store counter
+        var catalogueNo = 0
+        
+        //Set context
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        //Declare Entity
+        let catalogueEntity = NSFetchRequest<NSFetchRequestResult>(entityName: "Catalogue")
+        
+        catalogueEntity.returnsObjectsAsFaults = false
+        
+        //Check CoreData
+        do {
+            let results = try context.count(for: catalogueEntity)
+                catalogueNo = results + 1
+                    cataloguOutletText.text = String(catalogueNo)
+                        print("The next catalogue number is: \(catalogueNo)")
+            
+        } catch {
+            print("Unable to get new number")
+        }
+        
     }
     
 
