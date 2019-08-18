@@ -16,12 +16,19 @@ class VideoRentalMainPage: UIViewController {
     @IBOutlet weak var rentVideoOutletLabel: UILabel!
     @IBOutlet weak var reportMenuOutletLabel: UILabel!
     @IBOutlet weak var databaseUpdateOutletLabel: UILabel!
+    @IBOutlet weak var navigationOutletNavBar: UINavigationBar!
+    
+    
+    //Outlets for buttons
+    @IBOutlet weak var addVideoOutletButton: UIButton!
+    @IBOutlet weak var rentVideoOutletButton: UIButton!
+    @IBOutlet weak var reportMenuOutletButton: UIButton!
+    @IBOutlet weak var databaseUpdateMenuOutletButton: UIButton!
+    
     
     
     
     //Outlet for leading Constraint
-
-
     @IBOutlet weak var slideBarLeadingOutletConstraint: NSLayoutConstraint!
     
     //Set Slidebar launch start point
@@ -58,6 +65,13 @@ class VideoRentalMainPage: UIViewController {
         //Set the background color for the slide bar
         slidebarOutletView.backgroundColor = #colorLiteral(red: 0, green: 0.3285208941, blue: 0.5748849511, alpha: 0.3200717038)
         
+        //Set format for navigation bar
+        navigationOutletNavBar.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        navigationOutletNavBar.layer.shadowOpacity = 1
+        navigationOutletNavBar.layer.shadowRadius = 6
+        navigationOutletNavBar.layer.shadowOffset = CGSize(width: 5, height: 5)
+        
+        
         //Set slidebar starting point
         //leadingOutletConstraint.constant = -165
         slideBarLeadingOutletConstraint.constant = -165
@@ -91,4 +105,25 @@ class VideoRentalMainPage: UIViewController {
         UIView.animate(withDuration: 0.3, animations: self.view.layoutIfNeeded)
         
     }
+    
+    
+    
+    //Selection Action Control Section
+    
+    //Add Video to catalogue
+    @IBAction func addVideoCatalogueActionButton(_ sender: UIButton) {
+        
+        //Set MainStory Board
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //Set Video Entry Segue
+        let videoEntry = mainStoryBoard.instantiateViewController(withIdentifier: "videoCatEntryVC") as! VideoCatalogueEntryVC
+        
+        //Call VideoEntry
+        self.present(videoEntry,animated: true,completion: nil)
+    }
+    
+    
+    
+    
 }

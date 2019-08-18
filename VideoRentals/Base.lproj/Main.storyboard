@@ -24,6 +24,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiH-Wq-LPX">
                                         <rect key="frame" x="30" y="43" width="83" height="64"/>
                                         <state key="normal" title="Button" image="videoCollectionAddIcon"/>
+                                        <connections>
+                                            <action selector="addVideoCatalogueActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7H5-tZ-phr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V12-xo-yVN">
                                         <rect key="frame" x="29" y="219" width="83" height="64"/>
@@ -118,9 +121,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addVideoOutletButton" destination="OiH-Wq-LPX" id="gpI-bF-srf"/>
                         <outlet property="addVideoOutletLabel" destination="cOm-Uc-kNH" id="aw4-Wn-yYS"/>
+                        <outlet property="databaseUpdateMenuOutletButton" destination="DvS-te-HmZ" id="e1M-an-8qw"/>
                         <outlet property="databaseUpdateOutletLabel" destination="eaR-93-ncp" id="UXP-rg-xS7"/>
+                        <outlet property="navigationOutletNavBar" destination="ebE-4O-OLz" id="nVs-ei-buP"/>
+                        <outlet property="rentVideoOutletButton" destination="V12-xo-yVN" id="Kd6-Mv-xnn"/>
                         <outlet property="rentVideoOutletLabel" destination="kug-0R-r7K" id="OK3-Wg-lvh"/>
+                        <outlet property="reportMenuOutletButton" destination="XnY-S0-CT4" id="u8q-Ww-2GS"/>
                         <outlet property="reportMenuOutletLabel" destination="NWk-z0-4hh" id="QHP-gc-jgy"/>
                         <outlet property="slideBarLeadingOutletConstraint" destination="mO5-85-vrW" id="Ooh-nQ-7eM"/>
                         <outlet property="slidebarOutletView" destination="Sfp-kS-gNp" id="uJw-Zh-lGq"/>
@@ -129,6 +137,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-584.05797101449275" y="118.52678571428571"/>
+        </scene>
+        <!--Video Catalogue EntryVC-->
+        <scene sceneID="N6X-Kv-B9T">
+            <objects>
+                <viewController storyboardIdentifier="videoCatEntryVC" id="k09-df-ghc" customClass="VideoCatalogueEntryVC" customModule="VideoRentals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lEX-cf-rHs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkQ-UX-jU6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Video Entry Form" id="ent-0F-20g">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ekc-A9-fkZ">
+                                            <connections>
+                                                <action selector="BackToMainPage:" destination="k09-df-ghc" id="5l4-eg-5bf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NUn-o5-3dy"/>
+                    </view>
+                    <connections>
+                        <outlet property="backToMainPageOutletItem" destination="ekc-A9-fkZ" id="pXc-Ag-TJ1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vUR-9f-xWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="113"/>
         </scene>
     </scenes>
     <resources>
