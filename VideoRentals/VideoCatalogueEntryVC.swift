@@ -41,6 +41,15 @@ class VideoCatalogueEntryVC: UIViewController {
         createCatalogueNo()
     }
     
+    //Save Action
+    @IBAction func saveREcordActionButton(_ sender: UIButton) {
+        
+        
+        //Call new catalogue function
+        newCatalogueRecord()
+    }
+    
+    
     
     //Call Menu Action
     @IBAction func BackToMainPage(_ sender: UIBarButtonItem) {
@@ -136,7 +145,7 @@ class VideoCatalogueEntryVC: UIViewController {
     }
     
     
-    //Function to autocreate cataloge number
+    //Function to autocreate cataloge number for the Video
     func createCatalogueNo() {
         
         //Variable to store counter
@@ -160,6 +169,65 @@ class VideoCatalogueEntryVC: UIViewController {
         } catch {
             print("Unable to get new number")
         }
+        
+    }
+    
+//Function to add new record to the Catalogue Entity
+    func newCatalogueRecord() {
+        
+        //Set the context
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        //et Catalogue Entity
+        let catalogueEntity = NSEntityDescription.entity(forEntityName: "Catalogue", in: context)
+        
+        let newcatRecord = NSManagedObject(entity: catalogueEntity!, insertInto: context)
+        
+        //Error checking for nil value in the form
+        
+        guard let chkCatalogueNo = cataloguOutletText.text else {
+            print("Nil value in Catalogue No field")
+            return
+        }
+        
+        guard let chkFilmTitle = filmTitleOutleuText.text else {
+            print("Film title has nil value in field")
+            return
+        }
+        
+        guard let chkGenreSel = genreOutletLabel.text else {
+            print("Genre lable has nil value")
+            return
+        }
+        
+        guard let chkQty = quantityOutletText.text else {
+            print("Quantity has nil value in field")
+            return
+            
+        }
+        
+        guard let chkCost = rentalCostOutletText.text else {
+            print("Nil value in the rental cost field")
+            return
+        }
+        
+        //Sen the form values into CoreDat Catalogue Entity
+        newcatRecord.setValue(Int(chkCatalogueNo), forKey: "catNo")
+        newcatRecord.setValue(chkFilmTitle, forKey: "filmTitle")
+        newcatRecord.setValue(chkGenreSel, forKey: "genre")
+        newcatRecord.setValue(Int(chkQty), forKey: "quantity")
+        newcatRecord.setValue(Double(chkCost), forKey: "RentalCost")
+        
+        
+       //Save the record into the CoreData Entity Database
+        
+        do {
+            try context.save()
+            
+        } catch {
+            print("Unable to save the new Record")
+        }
+        
         
     }
     

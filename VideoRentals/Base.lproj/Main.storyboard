@@ -167,6 +167,16 @@
                                     <constraint firstAttribute="height" constant="100" id="2rs-B4-IaF"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5k-9o-Kzd">
+                                <rect key="frame" x="135" y="780" width="145" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="p8Z-Xc-DcK"/>
+                                </constraints>
+                                <state key="normal" title="Add Film"/>
+                                <connections>
+                                    <action selector="saveREcordActionButton:" destination="k09-df-ghc" eventType="touchUpInside" id="Von-ym-4cp"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Catalogue No" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-ul-fgF">
                                 <rect key="frame" x="97" y="262" width="183" height="30"/>
                                 <constraints>
@@ -206,17 +216,8 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvy-bm-2zo">
                                 <rect key="frame" x="97" y="404" width="196" height="162"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGN-Gg-kG4">
-                                <rect key="frame" x="97" y="364" width="196" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="6dG-n6-sar"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXM-G8-AOE">
-                                <rect key="frame" x="20" y="470" width="68" height="31"/>
+                                <rect key="frame" x="20" y="470" width="68" height="30.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -245,13 +246,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5k-9o-Kzd">
-                                <rect key="frame" x="135" y="780" width="145" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGN-Gg-kG4">
+                                <rect key="frame" x="97" y="372" width="196" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="p8Z-Xc-DcK"/>
+                                    <constraint firstAttribute="height" constant="32" id="6dG-n6-sar"/>
                                 </constraints>
-                                <state key="normal" title="Add Film"/>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -270,7 +273,7 @@
                             <constraint firstItem="AJi-XD-hWA" firstAttribute="top" secondItem="Cmq-Xi-pxL" secondAttribute="bottom" constant="8" symbolic="YES" id="HkK-9o-ElD"/>
                             <constraint firstItem="EGN-Gg-kG4" firstAttribute="leading" secondItem="jvy-bm-2zo" secondAttribute="leading" id="IxX-D3-lW1"/>
                             <constraint firstItem="wqg-U8-AlS" firstAttribute="top" secondItem="kbv-re-idm" secondAttribute="bottom" constant="8" symbolic="YES" id="JJb-hW-gnb"/>
-                            <constraint firstItem="dXM-G8-AOE" firstAttribute="top" secondItem="EGN-Gg-kG4" secondAttribute="top" constant="106" id="MoU-uE-7wZ"/>
+                            <constraint firstItem="dXM-G8-AOE" firstAttribute="top" secondItem="EGN-Gg-kG4" secondAttribute="top" constant="98" id="MoU-uE-7wZ"/>
                             <constraint firstItem="Fgm-ul-fgF" firstAttribute="top" secondItem="Dk2-C5-vh8" secondAttribute="bottom" constant="58" id="N6Y-rl-TGG"/>
                             <constraint firstItem="Dk2-C5-vh8" firstAttribute="leading" secondItem="lEX-cf-rHs" secondAttribute="leadingMargin" constant="13.5" id="NDs-Ub-FzS"/>
                             <constraint firstItem="Ghe-pw-Ytc" firstAttribute="leading" secondItem="Dk2-C5-vh8" secondAttribute="leading" constant="-13.5" id="QNR-li-OFa"/>
@@ -287,7 +290,7 @@
                             <constraint firstItem="Cmq-Xi-pxL" firstAttribute="top" secondItem="kbv-re-idm" secondAttribute="top" id="jbe-Kp-2Kv"/>
                             <constraint firstItem="bkQ-UX-jU6" firstAttribute="top" secondItem="NUn-o5-3dy" secondAttribute="top" id="jg7-97-oqp"/>
                             <constraint firstItem="Dk2-C5-vh8" firstAttribute="top" secondItem="bkQ-UX-jU6" secondAttribute="bottom" constant="16" id="kF0-GE-cQl"/>
-                            <constraint firstItem="EGN-Gg-kG4" firstAttribute="top" secondItem="CuY-iV-5fN" secondAttribute="bottom" constant="34" id="kh7-Mp-dwR"/>
+                            <constraint firstItem="EGN-Gg-kG4" firstAttribute="top" secondItem="CuY-iV-5fN" secondAttribute="bottom" constant="42" id="kh7-Mp-dwR"/>
                             <constraint firstItem="kbv-re-idm" firstAttribute="leading" secondItem="wqg-U8-AlS" secondAttribute="leading" id="l90-Ao-ROP"/>
                             <constraint firstItem="r5k-9o-Kzd" firstAttribute="leading" secondItem="NUn-o5-3dy" secondAttribute="leading" constant="135" id="l9Y-A6-oMl"/>
                             <constraint firstItem="NUn-o5-3dy" firstAttribute="bottom" secondItem="r5k-9o-Kzd" secondAttribute="bottom" constant="37" id="ln3-Uy-zlN"/>
