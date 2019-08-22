@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0319D833230D784F00A27197 /* ReportMainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319D832230D784F00A27197 /* ReportMainMenuVC.swift */; };
+		0319D835230ED3B100A27197 /* AllCatalogueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319D834230ED3B100A27197 /* AllCatalogueVC.swift */; };
 		03E29A8D23076F6B007D97E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E29A8C23076F6B007D97E8 /* AppDelegate.swift */; };
 		03E29A9223076F6B007D97E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E29A9023076F6B007D97E8 /* Main.storyboard */; };
 		03E29A9523076F6B007D97E8 /* VideoRentals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03E29A9323076F6B007D97E8 /* VideoRentals.xcdatamodeld */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0319D832230D784F00A27197 /* ReportMainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMainMenuVC.swift; sourceTree = "<group>"; };
+		0319D834230ED3B100A27197 /* AllCatalogueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCatalogueVC.swift; sourceTree = "<group>"; };
 		03E29A8923076F6B007D97E8 /* VideoRentals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoRentals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E29A8C23076F6B007D97E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03E29A9123076F6B007D97E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 				03E29A8C23076F6B007D97E8 /* AppDelegate.swift */,
 				03E29AA1230772BC007D97E8 /* VideoRentalMainPage.swift */,
 				03E29A9023076F6B007D97E8 /* Main.storyboard */,
+				0319D834230ED3B100A27197 /* AllCatalogueVC.swift */,
+				0319D832230D784F00A27197 /* ReportMainMenuVC.swift */,
 				03E29AA323094000007D97E8 /* VideoCatalogueEntryVC.swift */,
 				03E29A9623076F6D007D97E8 /* Assets.xcassets */,
 				03E29A9823076F6D007D97E8 /* LaunchScreen.storyboard */,
@@ -143,6 +149,8 @@
 			files = (
 				03E29AA2230772BC007D97E8 /* VideoRentalMainPage.swift in Sources */,
 				03E29AA423094000007D97E8 /* VideoCatalogueEntryVC.swift in Sources */,
+				0319D835230ED3B100A27197 /* AllCatalogueVC.swift in Sources */,
+				0319D833230D784F00A27197 /* ReportMainMenuVC.swift in Sources */,
 				03E29A8D23076F6B007D97E8 /* AppDelegate.swift in Sources */,
 				03E29A9523076F6B007D97E8 /* VideoRentals.xcdatamodeld in Sources */,
 			);

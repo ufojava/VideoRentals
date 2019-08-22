@@ -123,6 +123,19 @@ class VideoRentalMainPage: UIViewController {
         self.present(videoEntry,animated: true,completion: nil)
     }
     
+    //Select Action to go to the report menu
+    @IBAction func rptMainMenuActionButton(_ sender: UIButton) {
+        
+        //Set Main StoryBoard
+        let mainStoryBosrd: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //Set Report Menu
+        let mainRptMenu = mainStoryBosrd.instantiateViewController(withIdentifier: "rptMainMenuVC") as! ReportMainMenuVC
+        
+        //Call Report menu function
+        self.present(mainRptMenu,animated: true,completion: nil)
+    }
+    
     
     
     

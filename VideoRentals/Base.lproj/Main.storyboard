@@ -47,6 +47,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnY-S0-CT4">
                                         <rect key="frame" x="31" y="395" width="83" height="64"/>
                                         <state key="normal" title="Button" image="videoCollection"/>
+                                        <connections>
+                                            <action selector="rptMainMenuActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xnt-3Y-HNk"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rpt Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWk-z0-4hh">
                                         <rect key="frame" x="31" y="477" width="83" height="21"/>
@@ -137,6 +140,98 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-584.05797101449275" y="118.52678571428571"/>
+        </scene>
+        <!--Report Main MenuVC-->
+        <scene sceneID="2xN-pG-1w7">
+            <objects>
+                <viewController storyboardIdentifier="rptMainMenuVC" id="lFU-O9-rX0" customClass="ReportMainMenuVC" customModule="VideoRentals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fz4-AE-izm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ha4-dq-cZd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Report Main Menu" id="aeS-1l-hoV">
+                                        <barButtonItem key="leftBarButtonItem" title="Home" id="tdJ-pz-hoM">
+                                            <connections>
+                                                <action selector="backToMainPage:" destination="lFU-O9-rX0" id="1He-KV-uTP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-H9-8ec">
+                                <rect key="frame" x="161" y="192" width="93" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="DLS-h2-qvx"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="allCatalogueRpt"/>
+                                <connections>
+                                    <action selector="allCatalogueTableRpt:" destination="lFU-O9-rX0" eventType="touchUpInside" id="DJu-JT-YFv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Catalogue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAs-Ud-2de">
+                                <rect key="frame" x="161" y="294" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ha4-dq-cZd" secondAttribute="trailing" id="57G-QS-hxR"/>
+                            <constraint firstItem="C8L-H9-8ec" firstAttribute="trailing" secondItem="QAs-Ud-2de" secondAttribute="trailing" id="FJt-wk-PNQ"/>
+                            <constraint firstItem="C8L-H9-8ec" firstAttribute="leading" secondItem="QAs-Ud-2de" secondAttribute="leading" id="HfZ-bc-MXx"/>
+                            <constraint firstItem="rhQ-xP-9YK" firstAttribute="bottom" secondItem="QAs-Ud-2de" secondAttribute="bottom" constant="547" id="PY9-MQ-7ef"/>
+                            <constraint firstItem="ha4-dq-cZd" firstAttribute="top" secondItem="rhQ-xP-9YK" secondAttribute="top" id="TO5-Rg-AiK"/>
+                            <constraint firstItem="QAs-Ud-2de" firstAttribute="top" secondItem="C8L-H9-8ec" secondAttribute="bottom" constant="8" symbolic="YES" id="WBM-wR-d5v"/>
+                            <constraint firstItem="ha4-dq-cZd" firstAttribute="leading" secondItem="Fz4-AE-izm" secondAttribute="leading" id="cT1-DK-5Uh"/>
+                            <constraint firstItem="C8L-H9-8ec" firstAttribute="centerX" secondItem="ha4-dq-cZd" secondAttribute="centerX" id="gSF-Ol-uuV"/>
+                            <constraint firstItem="C8L-H9-8ec" firstAttribute="leading" secondItem="rhQ-xP-9YK" secondAttribute="leading" constant="161" id="oas-AA-awk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rhQ-xP-9YK"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBarOutlet" destination="ha4-dq-cZd" id="762-JA-5pM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="af8-4u-4fC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101" y="-579"/>
+        </scene>
+        <!--All CatalogueVC-->
+        <scene sceneID="71d-O3-CnS">
+            <objects>
+                <viewController storyboardIdentifier="allCatTableReportVC" id="0oa-WR-crI" customClass="AllCatalogueVC" customModule="VideoRentals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mTb-ui-O2S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YAO-LQ-jvr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Video Inventory" id="ns7-6B-1Xb">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="6A5-LI-4Lr">
+                                            <connections>
+                                                <action selector="backToMenuActionItem:" destination="0oa-WR-crI" id="Uiu-M3-WcT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Z4H-AQ-FbH"/>
+                    </view>
+                    <connections>
+                        <outlet property="navBarOutletNav" destination="YAO-LQ-jvr" id="xTd-LP-nCf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uiv-Tv-XvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="761" y="-579"/>
         </scene>
         <!--Video Catalogue EntryVC-->
         <scene sceneID="N6X-Kv-B9T">
@@ -329,6 +424,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="allCatalogueRpt" width="100" height="100"/>
         <image name="databaseUpdateIcon" width="64" height="64"/>
         <image name="movieProjectorIcon" width="64" height="64"/>
         <image name="videoCollection" width="64" height="64"/>
