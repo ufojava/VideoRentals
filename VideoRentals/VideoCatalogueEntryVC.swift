@@ -25,6 +25,10 @@ class VideoCatalogueEntryVC: UIViewController {
     @IBOutlet weak var addFilmOutletButton: UIButton!
     @IBOutlet weak var genreOutletLabel: UILabel!
     
+    //Outlet for save action
+    @IBOutlet weak var infoSaveRecordLabel: UILabel!
+    
+    
     
     
     //Variable for Genre - PickerView
@@ -47,6 +51,7 @@ class VideoCatalogueEntryVC: UIViewController {
         
         //Call new catalogue function
         newCatalogueRecord()
+        formReset()
     }
     
     
@@ -129,8 +134,8 @@ class VideoCatalogueEntryVC: UIViewController {
         addFilmOutletButton.layer.shadowOffset = CGSize(width: 3, height: 3)
         addFilmOutletButton.layer.cornerRadius = 10
         
-        
-        
+        //Format information label
+        infoSaveRecordLabel.textColor = UIColor.yellow
         
         
     }
@@ -223,12 +228,30 @@ class VideoCatalogueEntryVC: UIViewController {
         
         do {
             try context.save()
+            //Set information lable
+            infoSaveRecordLabel.text = "New Video Saved"
             
         } catch {
             print("Unable to save the new Record")
         }
         
         
+    }
+    
+    //Reset Record Entry form after save action
+    func formReset() {
+        cataloguOutletText.text = " "
+        filmTitleOutleuText.text = " "
+        genreOutletLabel.text = " "
+        fileGenreOutletLabel.text = " "
+        quantityOutletText.text = " "
+        rentalCostOutletText.text = " "
+        
+        //Clear info display message
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.infoSaveRecordLabel.text = " "
+        }
     }
     
 
