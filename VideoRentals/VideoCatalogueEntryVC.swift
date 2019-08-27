@@ -200,7 +200,7 @@ class VideoCatalogueEntryVC: UIViewController {
             return
         }
         
-        guard let chkGenreSel = genreOutletLabel.text else {
+        guard let chkGenreSel = fileGenreOutletLabel.text else {
             print("Genre lable has nil value")
             return
         }
