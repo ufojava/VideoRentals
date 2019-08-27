@@ -22,8 +22,8 @@ class AllCatalogueVC: UIViewController {
     var catNoArray: [String] = []
     var filmTitleArray: [String] = []
     var genreArray: [String] = []
-    var qtyArray: [String] = []
-    var rentalArray: [String] = []
+    var qtyArray: [Int] = []
+    var rentalArray: [Double] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +70,6 @@ class AllCatalogueVC: UIViewController {
         tableviewOutletView.dataSource = self
     }
     
-    //STOPPED HERE - RETRIEVE DATA FROM COREDATA
     
     //Get Film catalogue
     func getFilmCatalogue() {
@@ -118,12 +117,30 @@ class AllCatalogueVC: UIViewController {
                         
                         genreArray.append(resGrere as! String)
                         
+                        //Set Quantity
+                        guard let resQty = result.value(forKey: "quantity") else {
+                            print("Found nil and quantity field")
+                            return
+                        }
+                        
+                        qtyArray.append(resQty as! Int)
+                        
+                        //Set Rental Cost
+                        guard let resRentalCost = result.value(forKey: "rentalCost") else {
+                            print("Found nil value in field")
+                            return
+                        }
+                        
+                        rentalArray.append(resRentalCost as! Double)
                         
                         
                         
                     }
                     print(catNoArray)
+                    print(filmTitleArray)
                     print(genreArray)
+                    print(qtyArray)
+                    print(rentalArray)
                     
                     
         }
@@ -154,11 +171,11 @@ extension AllCatalogueVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableviewOutletView.dequeueReusableCell(withIdentifier: "rptCell") as! RentalTableViewCell
         
-        cell.catalogueNoOutletLabel.text = catNoArray[indexPath.row]
-        cell.filmTitleOutletLabel.text = filmTitleArray[indexPath.row]
-        cell.genreOutletLabel.text = genreArray[indexPath.row]
-        //cell.quantityOutletLabel.text = qtyArray[indexPath.row]
-        //cell.rentalOutletLabel.text = rentalArray[indexPath.row]
+        cell.catalogueNoOutletLabel.text = "Cat No: \(catNoArray[indexPath.row])"
+        cell.filmTitleOutletLabel.text = "Title: \(filmTitleArray[indexPath.row])"
+        cell.genreOutletLabel.text = "Genre: \(genreArray[indexPath.row])"
+        cell.quantityOutletLabel.text = "Qty: \(qtyArray[indexPath.row])"
+        cell.rentalOutletLabel.text = "Rental: £\(rentalArray[indexPath.row])"
         
         return cell
     }
