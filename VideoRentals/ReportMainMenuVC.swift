@@ -12,6 +12,10 @@ class ReportMainMenuVC: UIViewController {
     
     //Outlet for View Controller
     @IBOutlet weak var navigationBarOutlet: UINavigationBar!
+    @IBOutlet weak var catalogueOutletLabel: UILabel!
+    @IBOutlet weak var videoSrchOutletLabel: UILabel!
+    @IBOutlet weak var allRentalOutletLabel: UILabel!
+    @IBOutlet weak var rentalSrchOutletLabel: UILabel!
     
 
     override func viewDidLoad() {
@@ -32,6 +36,12 @@ class ReportMainMenuVC: UIViewController {
         navigationBarOutlet.layer.shadowOpacity = 1
         navigationBarOutlet.layer.shadowRadius = 5
         navigationBarOutlet.layer.shadowOffset = CGSize(width: 3, height: 3)
+        
+        //Text Colour for Labels
+        catalogueOutletLabel.textColor = UIColor.white
+        videoSrchOutletLabel.textColor = UIColor.white
+        allRentalOutletLabel.textColor = UIColor.white
+        rentalSrchOutletLabel.textColor = UIColor.white
     }
     
 

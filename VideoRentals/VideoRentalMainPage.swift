@@ -137,6 +137,21 @@ class VideoRentalMainPage: UIViewController {
     }
     
     
+    //Select Action to go to Update and Delete Record
+    @IBAction func deleteUpdateRecords(_ sender: UIButton) {
+        
+        //Set Main StoryBoard
+        let mainStoryBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //Call the Update and Delete Records from Rentals and Catalogue
+        let updateDelete = mainStoryBoard.instantiateViewController(withIdentifier: "updateDeleteVC") as! updateCatalogueVC
+        
+        //Call the Update and Delete Storyboard
+        self.present(updateDelete,animated: true,completion: nil)
+    }
+    
+    
+    
     
     
 }
