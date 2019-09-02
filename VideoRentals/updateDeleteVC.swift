@@ -24,6 +24,7 @@ class updateDeleteVC: UIViewController {
     @IBOutlet weak var searchRecordOutletButton: UIButton!
     @IBOutlet weak var updateOutletButton: UIButton!
     @IBOutlet weak var deleteOutletButton: UIButton!
+    @IBOutlet weak var resetScreenOutletButton: UIButton!
     
     //Outlet Text Fields
     @IBOutlet weak var catalogueOutletText: UITextField!
@@ -65,6 +66,40 @@ class updateDeleteVC: UIViewController {
         srchCatalogue(inCatNo: catalogueOutletText.text!)
     }
     
+    //Call update record
+    @IBAction func updateCatAction(_ sender: UIButton) {
+        
+        //Call function
+        
+        if catalogueOutletText.text != "" {
+            
+            //call function
+            updateCatEntity(inCatNo: catalogueOutletText.text!)
+            
+            //Set information action
+            formInfoOutletLabel.textColor = UIColor.white
+            formInfoOutletLabel.text = "Catalogue Updated!!"
+            
+            //Reset Fields
+            resetField() //reset fields
+            
+            
+            //Delay clear information
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                self.formInfoOutletLabel.text = ""
+            }
+            
+        }
+        
+    }
+    
+    //Reset Screen Button
+    @IBAction func resetScreenButton(_ sender: UIButton) {
+        resetField() //Reset the screen
+    }
+    
+    
+    
     //Format ViewController
     func formatVC() {
         
@@ -104,6 +139,14 @@ class updateDeleteVC: UIViewController {
         deleteOutletButton.layer.shadowRadius = 5
         deleteOutletButton.layer.shadowOffset = CGSize(width: 3, height: 3)
         deleteOutletButton.layer.cornerRadius = 10
+        
+        resetScreenOutletButton.setTitleColor(.white, for: .normal)
+        resetScreenOutletButton.backgroundColor = #colorLiteral(red: 0.506442913, green: 0.3871898624, blue: 0.574860394, alpha: 0.94)
+        resetScreenOutletButton.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        resetScreenOutletButton.layer.shadowOpacity = 1
+        resetScreenOutletButton.layer.shadowRadius = 5
+        resetScreenOutletButton.layer.shadowOffset = CGSize(width: 3, height: 3)
+        resetScreenOutletButton.layer.cornerRadius = 10
         
         //Format Text fields
         catalogueOutletText.layer.shadowOpacity = 1
@@ -193,10 +236,34 @@ class updateDeleteVC: UIViewController {
                             return
                         }
                         
-                        //Get results from search
+                        guard let resGenre = result.value(forKey: "genre") as? String else {
+                            print("Nil value found in Genre field")
+                            return
+                        }
+                        
+                        guard let resQty = result.value(forKey: "quantity") else {
+                            print("Nil value found in quantity feild")
+                            return
+                        }
+                        
+                        guard let resCost = result.value(forKey: "rentalCost") else {
+                            print("Nil value found in Cost field")
+                            return
+                        }
+                        
+                        //Get results from search - Test Output
                         print(resCatNo)
                         print(resFilmTitle)
+                        print(resGenre)
+                        print(resQty)
+                        print(resCost)
                         
+                        //Assign the search result to the form field
+                        catalogueOutletText.text = "\(resCatNo)" //Integer
+                        titleOutletText.text = resFilmTitle
+                        pickerviewOutletLabel.text = resGenre
+                        qtyOutletText.text = "\(resQty)" //Interger
+                        rentalCostOutletText.text = "\(resCost)" //Double
 
                     }
                 }
@@ -206,7 +273,68 @@ class updateDeleteVC: UIViewController {
         
     }
     
-
+    //Function to update the Catalogue Entity
+    func updateCatEntity(inCatNo: String) {
+        
+        //Set CoreData contex
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        //Set the CoreData Entity
+        let cataEntity = NSFetchRequest<NSFetchRequestResult>(entityName: "Catalogue")
+        
+        //Predicate Catalogue Entity
+        cataEntity.predicate = NSPredicate(format: "catNo == %@", inCatNo)
+        
+        //Set fault result
+        cataEntity.returnsObjectsAsFaults = false
+        
+        
+        //Retreive predicated result from Catalogue Entity
+        do {
+            
+            let results = try context.fetch(cataEntity)
+                if results.count > 0 {
+                    for result in results as! [NSManagedObject] {
+                        
+                        guard result.value(forKey: "catNo") != nil else {
+                            print("Nil value found in Cat No")
+                            return
+                        }
+                        
+                        //Update catalogue entity
+                        result.setValue(Int(catalogueOutletText.text!), forKey: "catNo") //Set to integer
+                        result.setValue(titleOutletText.text, forKey: "filmTitle")
+                        result.setValue(pickerviewOutletLabel.text, forKey: "genre")
+                        result.setValue(Int(qtyOutletText.text!), forKey: "quantity") //Set to integer
+                        result.setValue(Double(rentalCostOutletText.text!), forKey: "rentalCost") //Set to double
+                    }
+        }
+        } catch {
+            print("Unable to retreive record")
+        }
+    
+        //Save record
+        
+        do {
+           try context.save()
+            
+            
+        } catch {
+            print("Unable to save record")
+        }
+        
+        
+        
+    }
+    
+    //Function to reset form fields
+    func resetField() {
+        catalogueOutletText.text = ""
+        titleOutletText.text = ""
+        pickerviewOutletLabel.text = ""
+        qtyOutletText.text = ""
+        rentalCostOutletText.text = ""
+    }
 
 
 }
