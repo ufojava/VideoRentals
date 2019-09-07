@@ -23,7 +23,7 @@ class videoRental: UIViewController {
     @IBOutlet weak var firstnameOutletText: UITextField!
     @IBOutlet weak var genreOutletText: UITextField!
     @IBOutlet weak var lastnameOutletText: UITextField!
-    @IBOutlet weak var infoOutletText: UILabel!
+    @IBOutlet weak var infoSavedLabel: UILabel!
     
     
     //Button Outlet
@@ -58,8 +58,27 @@ class videoRental: UIViewController {
     //Save new video rental
     @IBAction func saveNewRecord(_ sender: UIButton) {
         
-        //Save new video record
-        newVideoRecord()
+        
+        if firstnameOutletText.text != "" && lastnameOutletText.text != "" {
+            
+            //Save new video record
+            newVideoRecord()
+            
+            //Output successful saved action to screen
+            infoSavedLabel.text = "New Video Saved Successfully"
+            resetRentalForm() //Reset form
+            
+        } else {
+            
+            infoSavedLabel.text = "Video Records Blank!!"
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                self.infoSavedLabel.text = ""
+            }
+            
+        
+        }
+    
         
         //Test get record
         //getVideo()
@@ -115,6 +134,8 @@ class videoRental: UIViewController {
         returnDateOutletLabel.font = returnDateOutletLabel.font.withSize(14)
         rentalDateOutletLabel.textColor = UIColor.white
         rentalDateOutletLabel.font = rentalDateOutletLabel.font.withSize(14)
+        infoSavedLabel.textColor = UIColor.white
+        infoSavedLabel.font = infoSavedLabel.font.withSize(17) //Set Color Size
         
        
         
@@ -142,6 +163,7 @@ class videoRental: UIViewController {
         
         
     }
+    
     
     //Functions to call menu
     @IBAction func callHomePageItem(_ sender: UIBarButtonItem) {
@@ -303,7 +325,7 @@ class videoRental: UIViewController {
                             return
                         }
                         
-                     //Print the retreived data
+                     //Print the retreived data for teting only
                         print(resFirstname)
                         print(resLastname)
                         print(resTitle)
@@ -317,6 +339,27 @@ class videoRental: UIViewController {
         }
         
     }
+    
+    //Function to reset rental form
+    func resetRentalForm() {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            
+            self.catNoOutletText.text = ""
+            self.filmTitleOutletText.text = ""
+            self.genreOutletText.text = ""
+            self.remtalCostOutletText.text = ""
+            self.firstnameOutletText.text = ""
+            self.lastnameOutletText.text = ""
+            self.rentalDateOutletLabel.text = ""
+            self.returnDateOutletLabel.text = ""
+            self.infoSavedLabel.text = ""
+            
+        }
+        
+        
+    }
+    
 
 
 

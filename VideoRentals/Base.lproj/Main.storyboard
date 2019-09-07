@@ -1076,7 +1076,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ut-Wd-eIZ">
-                                <rect key="frame" x="159" y="618" width="235" height="31"/>
+                                <rect key="frame" x="159" y="617.5" width="235" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1129,13 +1129,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ya-eZ-3Qu">
-                                <rect key="frame" x="159" y="653" width="235" height="30"/>
+                                <rect key="frame" x="159" y="652.5" width="235" height="30.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7I-Or-MPs">
                                 <rect key="frame" x="20" y="653" width="96" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EO1-x9-ZF2">
+                                <rect key="frame" x="20" y="835" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1220,7 +1227,7 @@
                         <outlet property="filmTitleOutletText" destination="fTY-RY-EGA" id="Tsb-Wf-4MQ"/>
                         <outlet property="firstnameOutletText" destination="hLV-Y2-TS0" id="hMW-oU-lZj"/>
                         <outlet property="genreOutletText" destination="Yhv-4f-4L3" id="3dW-BR-c6d"/>
-                        <outlet property="infoOutletText" destination="TZ5-tg-OXK" id="p50-YY-jJu"/>
+                        <outlet property="infoSavedLabel" destination="EO1-x9-ZF2" id="RfS-i6-eNF"/>
                         <outlet property="lastnameOutletText" destination="dBl-Xl-0M5" id="4Ol-di-e8M"/>
                         <outlet property="navbarOutletNav" destination="qMx-Uu-Rn6" id="RKb-fc-Myx"/>
                         <outlet property="remtalCostOutletText" destination="tUy-0V-JMZ" id="R4S-rL-0T5"/>
