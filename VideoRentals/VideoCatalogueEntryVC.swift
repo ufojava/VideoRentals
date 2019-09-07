@@ -246,6 +246,7 @@ class VideoCatalogueEntryVC: UIViewController {
         fileGenreOutletLabel.text = " "
         quantityOutletText.text = " "
         rentalCostOutletText.text = " "
+        createCatalogueNo()
         
         //Clear info display message
         

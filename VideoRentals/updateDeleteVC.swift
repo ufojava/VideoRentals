@@ -73,6 +73,7 @@ class updateDeleteVC: UIViewController {
         
         if catalogueOutletText.text != "" {
             
+            
             //call function
             updateCatEntity(inCatNo: catalogueOutletText.text!)
             
@@ -92,6 +93,29 @@ class updateDeleteVC: UIViewController {
         }
         
     }
+    
+    //Call delete catalogue entity
+    @IBAction func deleCatRecord(_ sender: UIButton) {
+        
+        if catalogueOutletText.text != "" {
+            //Call function delete catalogue
+            delCatRecord(inCatNo: catalogueOutletText.text!)
+            
+            //Output delete record information
+            formInfoOutletLabel.textColor = UIColor.red
+            formInfoOutletLabel.text = "Record Deleted"
+            
+            resetField() //Reset the fields
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                self.formInfoOutletLabel.text = ""
+            }
+        }
+        
+        
+        
+    }
+    
     
     //Reset Screen Button
     @IBAction func resetScreenButton(_ sender: UIButton) {
@@ -266,7 +290,17 @@ class updateDeleteVC: UIViewController {
                         rentalCostOutletText.text = "\(resCost)" //Double
 
                     }
-                }
+                } else {
+                    formInfoOutletLabel.textColor = UIColor.red
+                    formInfoOutletLabel.text = "No Record Found!!"
+                    catalogueOutletText.text = ""
+                    
+                    //Clear information label
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                        self.formInfoOutletLabel.text = ""
+                    }
+                    
+            }
         } catch {
             print("Unable to get record")
         }
@@ -327,6 +361,47 @@ class updateDeleteVC: UIViewController {
         
     }
     
+    //Function to delete catalogue record
+    func delCatRecord(inCatNo: String) {
+        
+        //Set Context
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        //Set the Entity
+        let catEntity = NSFetchRequest<NSFetchRequestResult>(entityName: "Catalogue")
+        
+        //Predicate Entity
+        catEntity.predicate = NSPredicate(format: "catNo == %@", inCatNo)
+        
+        //Set fault results
+        catEntity.returnsObjectsAsFaults = false
+        
+        //Search Entity CoreData
+        do {
+            let results = try context.fetch(catEntity)
+                if results.count > 0 {
+                    for result in results as! [NSManagedObject] {
+                        guard result.value(forKey: "catNo") != nil else {
+                            print("Nil value found in CatNo field")
+                            return
+                        }
+                        context.delete(result)
+                        
+                    }
+        }
+        } catch {
+            print("No record found")
+        }
+        
+        //Save catalogue Entity
+        do {
+            try context.save()
+            
+        } catch {
+            print("Unable to save database")
+        }
+    
+    }
     //Function to reset form fields
     func resetField() {
         catalogueOutletText.text = ""

@@ -150,6 +150,19 @@ class VideoRentalMainPage: UIViewController {
         self.present(updateDelete,animated: true,completion: nil)
     }
     
+    //Button to call the Video Rental form
+    @IBAction func videoRentalForm(_ sender: UIButton) {
+        
+        //Set main StoryBoards
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //Set Video Rental Form
+        let videoRentalForm = mainStoryBoard.instantiateViewController(withIdentifier: "videoRentalVC") as! videoRental
+        
+        //Call Function
+        self.present(videoRentalForm,animated: true,completion: nil)
+        
+    }
     
     
     
