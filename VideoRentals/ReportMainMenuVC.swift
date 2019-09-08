@@ -72,6 +72,18 @@ class ReportMainMenuVC: UIViewController {
         self.present(allCatalogueTable,animated: true,completion: nil)
     }
     
+    //All Rentals Report - ViewController AllVideoRentalRpt_VC with identifier allVideoRentalRptVC
+    @IBAction func allVideoRentalsRpt(_ sender: UIButton) {
+        
+        //Set StoryBoard
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //Call All Video Report
+        let allRentalsRpt = mainStoryBoard.instantiateViewController(withIdentifier: "allVideoRentalRptVC") as! AllVideoRentalRpt_VC
+        
+        //Call Rental Video
+        self.present(allRentalsRpt,animated: true,completion: nil)
+    }
     
 
 
