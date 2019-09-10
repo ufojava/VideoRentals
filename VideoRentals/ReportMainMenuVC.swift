@@ -85,6 +85,20 @@ class ReportMainMenuVC: UIViewController {
         self.present(allRentalsRpt,animated: true,completion: nil)
     }
     
+    //Call Search Rental Reports
+    @IBAction func searchRentalReport(_ sender: UIButton) {
+        
+        //Main StoryBoard
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //Search Report
+        let rentalSrchRpt = mainStoryBoard.instantiateViewController(withIdentifier: "rentalSearchRptVC") as! RentalSearchRpt_VC
+        
+        //Call Rental Search Report
+        self.present(rentalSrchRpt,animated: true,completion: nil)
+    }
+    
+    
 
 
 }

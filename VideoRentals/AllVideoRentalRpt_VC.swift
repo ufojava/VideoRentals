@@ -32,8 +32,18 @@ class AllVideoRentalRpt_VC: UIViewController {
         super.viewDidLoad()
 
         //Call custom function
+        formatVC()
         delDataCon() //Connect Delegate and Datasource
         getRentalData()
+    }
+    
+    //formatVC
+    func formatVC() {
+        navbarOutletNavBar.layer.shadowOpacity = 1
+        navbarOutletNavBar.layer.shadowRadius = 5
+        navbarOutletNavBar.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        navbarOutletNavBar.layer.shadowOffset = CGSize(width: 3, height: 3)
+        
     }
     
     
@@ -136,17 +146,18 @@ extension AllVideoRentalRpt_VC: UITableViewDelegate, UITableViewDataSource {
         
         //Format cell text and colors
         cell.firstnameOutletText.font = cell.firstnameOutletText.font?.withSize(14)
-        cell.firstnameOutletText.text = firstnameArray[indexPath.row]
+        cell.firstnameOutletText.textColor = UIColor.blue
+        cell.firstnameOutletText.text = "Firstname: \(firstnameArray[indexPath.row])"
         
         cell.lastnameOutletText.font = cell.lastnameOutletText.font?.withSize(14)
-        cell.lastnameOutletText.text = lastnameArray[indexPath.row]
+        cell.lastnameOutletText.textColor = UIColor.blue
+        cell.lastnameOutletText.text = "Lastname: \(lastnameArray[indexPath.row])"
         
         cell.titleOutletText.font = cell.titleOutletText.font?.withSize(14)
-        cell.titleOutletText.text = titleArray[indexPath.row]
+        cell.titleOutletText.text = "Tile: \(titleArray[indexPath.row])"
         
         cell.rtnDateOutletText.font = cell.rtnDateOutletText.font?.withSize(14)
-        cell.rtnDateOutletText.text = "\(rtnDateArray[indexPath.row])"
-        
+        cell.rtnDateOutletText.text = "Rtn Date: \(rtnDateArray[indexPath.row])"
         
         return cell
     }
