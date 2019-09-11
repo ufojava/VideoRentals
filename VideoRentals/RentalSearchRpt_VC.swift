@@ -15,6 +15,7 @@ class RentalSearchRpt_VC: UIViewController {
     
     //Outltes for ViewController
     @IBOutlet weak var navbarOutletNavbar: UINavigationBar!
+    @IBOutlet weak var infoSearchResultOutlet: UILabel!
     
     //TableView Outlet
     @IBOutlet weak var tableviewOutletTableView: UITableView!
@@ -73,6 +74,9 @@ class RentalSearchRpt_VC: UIViewController {
         searchOutletButton.layer.cornerRadius = 8
         searchOutletButton.layer.shadowOffset = CGSize(width: 3, height: 3)
         
+        //Format Information label
+        infoSearchResultOutlet.font = infoSearchResultOutlet.font.withSize(14)
+        
         
     }
     
@@ -82,6 +86,25 @@ class RentalSearchRpt_VC: UIViewController {
         tableviewOutletTableView.delegate = self
         tableviewOutletTableView.dataSource = self
     }
+    
+    //Button Action
+    //Search Button
+    @IBAction func searchActionButton(_ sender: UIButton) {
+        
+        if firstnameOutletFormText.text == "" {
+            srchVidRentals(inSrchParam: lastnameOutletFromText.text!)
+            self.tableviewOutletTableView.reloadData()
+            
+        } else if lastnameOutletFromText.text == "" {
+            srchVidRentals(inSrchParam: firstnameOutletFormText.text!)
+            self.tableviewOutletTableView.reloadData()
+            
+        } else {
+            print("Both fields are blank!!!")
+        }
+        
+    }
+    
     
     
     //Report Menu Action
@@ -95,6 +118,87 @@ class RentalSearchRpt_VC: UIViewController {
         
         //Call REport Menu
         self.present(rptMenu,animated: true,completion: nil)
+    }
+    
+    //Search Video Rentals
+    func srchVidRentals(inSrchParam: String) { //Search Param may be either first or lastnames
+        
+        //Set Context
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        //Set Entity
+        let rentalEntity = NSFetchRequest<NSFetchRequestResult>(entityName: "Rental")
+        
+        //Predicate Search
+        
+        rentalEntity.predicate = NSPredicate(format: "firstname == %@ || lastname == %@", inSrchParam, inSrchParam)
+        
+        //Set result fault
+        rentalEntity.returnsObjectsAsFaults = false
+        
+        //Loop through the Rental Database
+        do {
+            
+            let results = try context.fetch(rentalEntity)
+                if results.count > 0 {
+                    for result in results as! [NSManagedObject] {
+                        guard let resFirstname = result.value(forKey: "firstname") else {
+                            print("No value found in firstname")
+                            return
+                        }
+                        //Append value to the Firstname Array
+                        firstnameArray.append(resFirstname as! String)
+                        
+                        guard let resLastname = result.value(forKey: "lastname") else {
+                            print("No vlaue found in lastname")
+                            return
+                        }
+                        //Append value to the Lastname Array
+                        lastnameArray.append(resLastname as! String)
+                        
+                        
+                        guard let resTitle = result.value(forKey: "filmTitle") else {
+                            print("No value found in film tile")
+                            return
+                        }
+                        //Append value to the Title Array
+                        titleArray.append(resTitle as! String)
+                        
+                        guard let resCost = result.value(forKey: "cost") else {
+                            print("Nil value in the cost field")
+                            return
+                        }
+                        //Append result value to the Cost Array
+                        costArray.append(resCost as! Double)
+                        
+                        guard let resRentalDate = result.value(forKey: "dateRented") else {
+                            print("Nil value found in date field")
+                            return
+                        }
+                        //Append result to Rental Date
+                        rentalDateArray.append(resRentalDate as! Date)
+                        
+                        guard let resRtnDate = result.value(forKey: "returnDate") else {
+                            print("Nil value in the return date field")
+                            return
+                        }
+                        //Append result of Return Date Array
+                        rtnDateArray.append(resRtnDate as! Date)
+                        
+                        
+                    }
+                    
+                    //Test Array Data
+                    print(firstnameArray)
+                    print(lastnameArray)
+                    print(titleArray)
+                    
+            }
+        } catch {
+            print("Unable to retreive records")
+        }
+        
+        
     }
     
     
