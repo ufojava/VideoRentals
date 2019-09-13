@@ -69,6 +69,21 @@ class updateCatalogueVC: UIViewController {
         self.present(updateDeleteForm,animated: true,completion: nil)
     }
     
+    //Call Rental Update  / Delete form - RentalUpdate_VC - identifier rentalUpdate
+    @IBAction func rentalsUpdateDeleteButton(_ sender: UIButton) {
+        
+        //Set StoryBoard
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //Set Rentals
+        let rentalsUpdate = mainStoryBoard.instantiateViewController(withIdentifier: "rentalUpdate") as! RentalUpdate_VC
+        
+        //Call function
+        self.present(rentalsUpdate,animated: true,completion: nil)
+        
+    }
+    
+    
     
     
     

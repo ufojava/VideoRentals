@@ -13,6 +13,7 @@
 		03530B3423256BFF001E6FAF /* AllRentalRpt_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03530B3323256BFF001E6FAF /* AllRentalRpt_TVC.swift */; };
 		03530B3623270360001E6FAF /* RentalSearchRpt_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03530B352327035F001E6FAF /* RentalSearchRpt_VC.swift */; };
 		03530B3823284052001E6FAF /* videoSearchRental_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03530B3723284052001E6FAF /* videoSearchRental_TVCell.swift */; };
+		03530B3A232C4E4F001E6FAF /* RentalUpdate_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03530B39232C4E4F001E6FAF /* RentalUpdate_VC.swift */; };
 		0355C2AE23106C0F0004BB08 /* RentalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355C2AD23106C0F0004BB08 /* RentalTableViewCell.swift */; };
 		0355C2B22315E0750004BB08 /* updateCatalogueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355C2B12315E0750004BB08 /* updateCatalogueVC.swift */; };
 		0355C2B42318ECC10004BB08 /* updateDeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355C2B32318ECC10004BB08 /* updateDeleteVC.swift */; };
@@ -33,6 +34,7 @@
 		03530B3323256BFF001E6FAF /* AllRentalRpt_TVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRentalRpt_TVC.swift; sourceTree = "<group>"; };
 		03530B352327035F001E6FAF /* RentalSearchRpt_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalSearchRpt_VC.swift; sourceTree = "<group>"; };
 		03530B3723284052001E6FAF /* videoSearchRental_TVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoSearchRental_TVCell.swift; sourceTree = "<group>"; };
+		03530B39232C4E4F001E6FAF /* RentalUpdate_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalUpdate_VC.swift; sourceTree = "<group>"; };
 		0355C2AD23106C0F0004BB08 /* RentalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalTableViewCell.swift; sourceTree = "<group>"; };
 		0355C2B12315E0750004BB08 /* updateCatalogueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateCatalogueVC.swift; sourceTree = "<group>"; };
 		0355C2B32318ECC10004BB08 /* updateDeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateDeleteVC.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				03E29A8C23076F6B007D97E8 /* AppDelegate.swift */,
 				03E29AA1230772BC007D97E8 /* VideoRentalMainPage.swift */,
 				03E29A9023076F6B007D97E8 /* Main.storyboard */,
+				03530B39232C4E4F001E6FAF /* RentalUpdate_VC.swift */,
 				03530B3723284052001E6FAF /* videoSearchRental_TVCell.swift */,
 				03530B352327035F001E6FAF /* RentalSearchRpt_VC.swift */,
 				03530B3323256BFF001E6FAF /* AllRentalRpt_TVC.swift */,
@@ -181,6 +184,7 @@
 				03E29AA423094000007D97E8 /* VideoCatalogueEntryVC.swift in Sources */,
 				0319D835230ED3B100A27197 /* AllCatalogueVC.swift in Sources */,
 				03530B3823284052001E6FAF /* videoSearchRental_TVCell.swift in Sources */,
+				03530B3A232C4E4F001E6FAF /* RentalUpdate_VC.swift in Sources */,
 				0319D833230D784F00A27197 /* ReportMainMenuVC.swift in Sources */,
 				03E29A8D23076F6B007D97E8 /* AppDelegate.swift in Sources */,
 				03E29A9523076F6B007D97E8 /* VideoRentals.xcdatamodeld in Sources */,

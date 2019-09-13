@@ -77,6 +77,9 @@ class RentalSearchRpt_VC: UIViewController {
         //Format Information label
         infoSearchResultOutlet.font = infoSearchResultOutlet.font.withSize(14)
         
+        //Hide unused Tableviewcells
+        tableviewOutletTableView.tableFooterView = UIView()
+        
         
     }
     
@@ -90,6 +93,9 @@ class RentalSearchRpt_VC: UIViewController {
     //Button Action
     //Search Button
     @IBAction func searchActionButton(_ sender: UIButton) {
+        
+        //Reset Array variables
+        resetArray()
         
         if firstnameOutletFormText.text == "" {
             srchVidRentals(inSrchParam: lastnameOutletFromText.text!)
@@ -193,12 +199,36 @@ class RentalSearchRpt_VC: UIViewController {
                     print(lastnameArray)
                     print(titleArray)
                     
+                } else {
+                    
+                    infoSearchResultOutlet.textColor = UIColor.red
+                    infoSearchResultOutlet.text = "No Records Found!!!"
+                    
+                    //Clear infomation Field
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                        self.infoSearchResultOutlet.text = ""
+                    }
+                    
             }
+            
+            
+            
         } catch {
             print("Unable to retreive records")
+            
         }
         
         
+    }
+    
+    //function to reset Array for new input
+    func resetArray() {
+        firstnameArray.removeAll()
+        lastnameArray.removeAll()
+        titleArray.removeAll()
+        costArray.removeAll()
+        rentalDateArray.removeAll()
+        rtnDateArray.removeAll()
     }
     
     
@@ -240,7 +270,7 @@ extension RentalSearchRpt_VC: UITableViewDelegate, UITableViewDataSource {
         cell.costOutletCell.text = "Cost: \(costArray[indexPath.row])"
         
         cell.rentalDateOutletCell.font = cell.rentalDateOutletCell.font?.withSize(14)
-        cell.rentalDateOutletCell.text = "RentalDate: \(rentalDateArray[indexPath.row])"
+        cell.rentalDateOutletCell.text = "Date: \(rentalDateArray[indexPath.row])"
         
         cell.rtnDateOutletCell.font = cell.rtnDateOutletCell.font?.withSize(14)
         cell.rtnDateOutletCell.text = "Return Date: \(rtnDateArray[indexPath.row])"
