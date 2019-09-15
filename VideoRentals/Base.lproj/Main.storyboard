@@ -626,7 +626,7 @@
                                 <rect key="frame" x="20" y="241" width="374" height="450"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="180" id="MjJ-Xk-8RD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="180" id="MjJ-Xk-8RD" customClass="rentalUpdateDelete_TVC" customModule="VideoRentals" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MjJ-Xk-8RD" id="bOz-7m-fsj">
@@ -695,6 +695,14 @@
                                                 <constraint firstItem="Zj3-Iu-cKE" firstAttribute="leading" secondItem="bOz-7m-fsj" secondAttribute="leadingMargin" id="x3N-J1-ZI7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="costOutletCell" destination="nds-wW-ZPR" id="Jlz-aL-hVW"/>
+                                            <outlet property="dateOutletCell" destination="cQ6-4j-3su" id="bnF-X2-8kd"/>
+                                            <outlet property="firstnameOutletCell" destination="mEH-Ko-jfd" id="Wo9-eE-hh4"/>
+                                            <outlet property="lastnameOutletCell" destination="51m-j3-G6g" id="eQ9-2h-t72"/>
+                                            <outlet property="returnOutletCell" destination="Zj3-Iu-cKE" id="2BI-Yz-Mem"/>
+                                            <outlet property="titleOutletCell" destination="LKd-ue-hOA" id="JZu-i5-oJF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
